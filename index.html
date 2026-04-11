@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gosfield Water Ski Club — Essex's Premier Waterski Destination</title>
+  <meta name="description" content="Top class waterski coaching at the beautiful Gosfield Lake, Essex. Beginners to pro, 1:2:1 coaching, wakeboarding, open water swimming & more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              DEFAULT: '#1B2D4F',
+              light: '#2A4270',
+              dark: '#0F1A2E',
+              deep: '#0A1628',
+              50: '#F0F3F8',
+              100: '#D9E1ED',
+              200: '#B3C3DB',
+              800: '#132240',
+              900: '#0D1829',
+            },
+            accent: {
+              DEFAULT: '#E8871E',
+              light: '#F09A3A',
+              dark: '#D07518',
+              warm: '#F5A84B',
+              50: '#FFF8F0',
+              100: '#FEECD5',
+              200: '#FDD9AB',
+            },
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            condensed: ['"Barlow Condensed"', 'sans-serif'],
+            body: ['"Barlow"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --navy: #1B2D4F;
+      --navy-light: #2A4270;
+      --navy-dark: #0F1A2E;
+      --navy-deep: #0A1628;
+      --orange: #E8871E;
+      --orange-light: #F09A3A;
+      --orange-dark: #D07518;
+      --white: #FFFFFF;
+      --off-white: #F8F9FB;
+      --warm-gray: #F3F1EE;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--white);
+      color: #2D3748;
+      overflow-x: hidden;
+    }
+
+    /* Subtle grain — very light for white bg */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.015;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--white); }
+    ::-webkit-scrollbar-thumb { background: var(--navy); border-radius: 3px; }
+
+    /* === TYPE SCALE === */
+    .hero-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.6rem, 10.4vw, 8.8rem);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .sub-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+
+    .img-cover { object-fit: cover; width: 100%; height: 100%; }
+
+    /* === BUTTONS === */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem;
+      padding: 15px 34px; border: none; cursor: pointer; text-decoration: none;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(232,135,30,0.3); }
+    .btn-primary:focus-visible { outline: 2px solid var(--orange-light); outline-offset: 3px; }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-navy {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--navy); color: #fff;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem;
+      padding: 15px 34px; border: none; cursor: pointer; text-decoration: none;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease;
+    }
+    .btn-navy:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(27,45,79,0.35); }
+    .btn-navy:focus-visible { outline: 2px solid var(--navy-light); outline-offset: 3px; }
+    .btn-navy:active { transform: translateY(0); }
+
+    .btn-outline-navy {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 2px solid var(--navy); color: var(--navy); background: transparent;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem;
+      padding: 13px 32px; cursor: pointer; text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .btn-outline-navy:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+    .btn-outline-navy:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+    .btn-outline-navy:active { transform: translateY(0); }
+
+    .btn-outline-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 2px solid #fff; color: #fff; background: transparent;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem;
+      padding: 13px 32px; cursor: pointer; text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .btn-outline-white:hover { background: #fff; color: var(--navy); transform: translateY(-2px); }
+    .btn-outline-white:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+    .btn-outline-white:active { transform: translateY(0); }
+
+    /* === NAV === */
+    .nav-link {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;
+      color: #fff; text-decoration: none; position: relative; padding: 4px 0;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--orange);
+      transition: width 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-link:hover::after, .nav-link:focus-visible::after { width: 100%; }
+
+    .nav-scrolled .nav-link { color: var(--navy); }
+    .nav-scrolled .nav-link::after { background: var(--orange); }
+    .nav-scrolled .nav-logo-text { color: var(--navy) !important; }
+    .nav-scrolled .nav-logo-sub { color: rgba(27,45,79,0.5) !important; }
+    .nav-scrolled .nav-logo-white { opacity: 0 !important; }
+    .nav-scrolled .nav-logo-dark { opacity: 1 !important; }
+    .nav-scrolled .hamburger-bar { background: var(--navy) !important; }
+
+    .nav-scrolled {
+      background: rgba(255,255,255,0.97) !important;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(27,45,79,0.06), 0 4px 24px rgba(27,45,79,0.08);
+    }
+
+    /* === CARDS === */
+    .card-lift {
+      transition: transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.45s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(27,45,79,0.12);
+    }
+
+    /* === SCROLL REVEAL === */
+    .reveal {
+      opacity: 0; transform: translateY(45px);
+      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.12s; }
+    .reveal-d2 { transition-delay: 0.24s; }
+    .reveal-d3 { transition-delay: 0.36s; }
+
+    /* === MARQUEE === */
+    /* Partners section */
+    .partner-logo {
+      opacity: 0.5;
+      transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .partner-logo:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* === COACH CARD === */
+    .coach-card .coach-bio {
+      opacity: 0; transform: translateY(12px);
+      transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.3s;
+    }
+    .coach-card.visible .coach-bio { opacity: 1; transform: translateY(0); }
+
+    /* === MOBILE MENU === */
+    .mobile-menu { transform: translateX(100%); transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); }
+    .mobile-menu.open { transform: translateX(0); }
+
+    /* === DECORATIVE === */
+    .hr-accent { width: 56px; height: 4px; background: var(--orange); }
+    .hr-navy { width: 56px; height: 4px; background: var(--navy); }
+    .parallax-bg { will-change: transform; }
+    .event-date { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; line-height: 0.9; }
+
+    /* === MODERN ANIMATIONS === */
+
+    /* 1. Hero text split-reveal — letters clip upward into view */
+    @keyframes clipReveal {
+      from { transform: translateY(110%); }
+      to   { transform: translateY(0); }
+    }
+    .hero-line {
+      overflow: hidden;
+      display: block;
+    }
+    .hero-line-inner {
+      display: block;
+      transform: translateY(110%);
+      animation: clipReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-line-inner.delay-1 { animation-delay: 0.15s; }
+    .hero-line-inner.delay-2 { animation-delay: 0.3s; }
+    .hero-line-inner.delay-3 { animation-delay: 0.45s; }
+
+    /* 2. Hero subtitle + CTA fade-in with subtle slide */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-fade {
+      opacity: 0;
+      animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .hero-fade.d1 { animation-delay: 0.6s; }
+    .hero-fade.d2 { animation-delay: 0.75s; }
+    .hero-fade.d3 { animation-delay: 0.9s; }
+    .hero-fade.d4 { animation-delay: 1.05s; }
+
+    /* 3. Horizontal line draw animation for accent rules */
+    .hr-accent-anim {
+      width: 56px; height: 4px; background: var(--orange);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+    }
+    .visible .hr-accent-anim,
+    .hr-accent-anim.visible { transform: scaleX(1); }
+
+    /* 4. Counter / number tick-up animation */
+    .counter-value {
+      display: inline-block;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 5. Parallax depth layers on scroll */
+    .parallax-slow { will-change: transform; }
+    .parallax-medium { will-change: transform; }
+
+    /* 6. Section title horizontal slide reveals */
+    .reveal-left {
+      opacity: 0; transform: translateX(-60px);
+      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+    .reveal-right {
+      opacity: 0; transform: translateX(60px);
+      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* 7. Scale-in for image sections */
+    .reveal-scale {
+      opacity: 0; transform: scale(0.92);
+      transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    /* 8. Stagger-in for grid items (swimming cards, facility cards, etc.) */
+    .stagger-item {
+      opacity: 0; transform: translateY(35px);
+      transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .stagger-item.visible { opacity: 1; transform: translateY(0); }
+
+    /* 10. Gradient shimmer on section backgrounds */
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .gradient-animated {
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    /* 11. Floating accent badge pulse */
+    @keyframes floatPulse {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    .float-badge {
+      animation: floatPulse 3s ease-in-out infinite;
+    }
+
+    /* 12. Nav link underline slide animation upgrade */
+    .nav-link::after {
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* 13. Smooth scroll progress indicator */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+      background: linear-gradient(90deg, var(--orange), var(--orange-light, #f5a623));
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: none;
+    }
+
+    /* Navy diagonal accent for sections */
+    .navy-accent-bg {
+      position: relative;
+    }
+    .navy-accent-bg::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 35%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(27,45,79,0.03) 100%);
+      pointer-events: none;
+    }
+
+    /* Soft shadow for white cards */
+    .card-shadow {
+      box-shadow: 0 1px 2px rgba(27,45,79,0.04), 0 4px 16px rgba(27,45,79,0.06), 0 12px 40px rgba(27,45,79,0.04);
+    }
+    .card-shadow-hover:hover {
+      box-shadow: 0 2px 4px rgba(27,45,79,0.06), 0 8px 24px rgba(27,45,79,0.1), 0 20px 48px rgba(27,45,79,0.06);
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <!-- ======== NAVIGATION ======== -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500" style="background: transparent;">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between h-24">
+      <a href="index.html" class="relative block transition-transform duration-300 hover:scale-105" style="width: 72px; height: 72px;">
+        <img src="brand_assets/images/logo-white.png" alt="Gosfield Water Ski Club" class="w-full h-full object-contain nav-logo-white transition-opacity duration-500">
+        <img src="brand_assets/images/logo-dark.png" alt="Gosfield Water Ski Club" class="w-full h-full object-contain nav-logo-dark absolute inset-0 opacity-0 transition-opacity duration-500">
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="nav-link">Water Skiing</a>
+        <a href="#activities" class="nav-link">Swimming</a>
+        <a href="#coaches" class="nav-link">Coaches</a>
+        <a href="events.html" class="nav-link">Events</a>
+        <a href="#facilities" class="nav-link">Facilities</a>
+        <a href="#stay" class="nav-link">Ski & Stay</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="http://skitow.rileyco.co.uk/" target="_blank" class="btn-primary text-sm !py-3 !px-6">Book Now</a>
+      </div>
+
+      <button id="menuBtn" class="lg:hidden flex flex-col gap-1.5 p-2 cursor-pointer" aria-label="Toggle menu">
+        <span class="hamburger-bar w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="bar1"></span>
+        <span class="hamburger-bar w-6 h-0.5 bg-white transition-all duration-300" id="bar2"></span>
+        <span class="hamburger-bar w-4 h-0.5 bg-white transition-all duration-300 origin-center" id="bar3"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed inset-0 z-40 bg-navy-deep/98 backdrop-blur-xl flex flex-col items-center justify-center gap-6">
+    <a href="#about" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Water Skiing</a>
+    <a href="#activities" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Swimming</a>
+    <a href="#coaches" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Coaches</a>
+    <a href="events.html" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Events</a>
+    <a href="#facilities" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Facilities</a>
+    <a href="#stay" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Ski & Stay</a>
+    <a href="#contact" onclick="closeMobile()" class="font-display text-4xl tracking-wider text-white hover:text-accent transition-colors">Contact</a>
+    <a href="http://skitow.rileyco.co.uk/" target="_blank" class="btn-primary text-lg mt-4">Book Now</a>
+  </div>
+
+  <!-- ======== HERO — Navy dark, orange accents ======== -->
+  <section class="relative lg:min-h-screen flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <video
+        id="heroVideo"
+        autoplay muted loop playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+        style="transform: scale(1.15); filter: saturate(1.15) contrast(1.05);"
+        src="brand_assets/videos/hero-video.mp4"
+      ></video>
+      <!-- Cinematic overlays -->
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.55) 30%, rgba(15,26,46,0.3) 55%, rgba(15,26,46,0.2) 100%);"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.35) 30%, transparent 100%);"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 65% 40%, rgba(232,135,30,0.05) 0%, transparent 70%);"></div>
+      <!-- Film grain texture -->
+      <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/%3E%3C/svg%3E'); background-size: 150px;"></div>
+      <!-- Cinematic letterbox bars -->
+      <div class="absolute top-0 left-0 right-0 h-[3px] bg-black/20 z-[1]"></div>
+      <div class="absolute bottom-0 left-0 right-0 h-[3px] bg-black/20 z-[1]"></div>
+      <!-- Vignette -->
+      <div class="absolute inset-0" style="box-shadow: inset 0 0 180px 50px rgba(10,22,40,0.3);"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 pb-10 lg:pb-28 pt-28 lg:pt-36 w-full">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 lg:gap-16">
+        <!-- Left: title + CTA -->
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-8 hero-fade d1">
+            <div class="w-14 h-[2px] bg-accent"></div>
+            <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.25em] text-accent">Est. 1992 — Gosfield Lake, Essex</span>
+          </div>
+          <h1 class="hero-title text-white mb-8">
+            <span class="hero-line"><span class="hero-line-inner text-accent">GOSFIELD LAKE</span></span>
+            <span class="hero-line"><span class="hero-line-inner delay-1">WATER SKI CLUB</span></span>
+          </h1>
+          <p class="font-body text-white/55 text-[1.05rem] max-w-[420px] mb-12 hero-fade d2" style="line-height: 1.75;">
+            Ski the lake that trains Team GB. Real boats. Real coaches. Real progress — every set, every season. The UK's benchmark for slalom, trick and jump coaching.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 hero-fade d3">
+            <a href="#contact" class="btn-primary">Contact Us</a>
+            <a href="events.html" class="btn-outline-white">Events</a>
+          </div>
+        </div>
+
+        <!-- Right: coaching info card -->
+        <a href="#about" class="group bg-accent p-6 lg:p-7 lg:w-[280px] lg:shrink-0 z-20 transition-transform duration-500 hover:scale-[1.02] hero-fade d4" style="border-radius: 2px;">
+          <p class="font-condensed font-bold text-[0.7rem] uppercase tracking-[0.2em] text-white/70 mb-2">Top Class Coaching</p>
+          <p class="font-body text-white/90 text-[0.82rem] leading-relaxed mb-4">Gosfield water ski club offers top class coaching to all standards of skier, beginners through to pro. Each members tow is coached on a 1:2:1 format.</p>
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.15em] text-white flex items-center gap-2">
+            Learn More
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="transition-transform duration-300 group-hover:translate-x-1"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+      <span class="font-condensed text-[0.65rem] tracking-[0.35em] uppercase text-white/30">Scroll</span>
+      <div class="w-px h-10 bg-white/15 relative overflow-hidden">
+        <div class="w-full h-4 bg-accent absolute animate-bounce" style="animation-duration: 2s;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== PARTNERS — Navy bg ======== -->
+  <section class="relative bg-navy-deep py-5 lg:py-6 overflow-hidden">
+    <!-- Subtle top border glow -->
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+    <!-- Subtle bottom border glow -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent"></div>
+
+    <div class="max-w-[1100px] mx-auto px-6 lg:px-12">
+      <!-- Label + Logo row -->
+      <div class="flex items-center justify-center gap-4 mb-5">
+        <div class="h-px w-10 bg-white/15"></div>
+        <span class="font-condensed text-[0.65rem] tracking-[0.35em] uppercase text-white/30 font-medium">Official Partners</span>
+        <div class="h-px w-10 bg-white/15"></div>
+      </div>
+
+      <div class="flex items-center justify-center gap-12 md:gap-20 lg:gap-28 flex-wrap">
+        <a href="#" class="block">
+          <img src="brand_assets/images/bws-white.png" alt="British Water Ski & Wakeboard" class="partner-logo h-14 md:h-16 w-auto">
+        </a>
+        <a href="#" class="block">
+          <img src="brand_assets/images/bmc-white.png" alt="BMC" class="partner-logo h-12 md:h-14 w-auto">
+        </a>
+        <a href="#" class="block">
+          <img src="brand_assets/images/nautique-white.png" alt="Nautique" class="partner-logo h-7 md:h-9 w-auto">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ABOUT — White bg, navy text ======== -->
+  <section id="about" class="relative py-28 lg:py-36 bg-white navy-accent-bg overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-5 items-start">
+        <!-- Left: Giant text + about copy -->
+        <div class="lg:col-span-5 reveal-left">
+          <h2 class="section-title text-navy leading-none">
+            WATER<br><span class="text-accent">SKIING</span>
+          </h2>
+          <div class="hr-accent-anim mt-8 mb-8"></div>
+
+          <div class="space-y-5 mt-8">
+            <p class="font-body text-navy/55 text-[0.88rem]" style="line-height: 1.75;">Water skiing is the most established feature of Gosfield Lake. Our boats are full tournament specification. Skis and wetsuits are available to our visitors and we are on hand to assist at all times.</p>
+            <p class="font-body text-navy/55 text-[0.88rem]" style="line-height: 1.75;">Gosfield water ski club offers top class coaching to all standards of skier, beginners through to pro. Each members tow is coached on a 1:2:1 format and we work with our members continually throughout the season to enhance their skiing capabilities on and off the water. Guest sets and lessons on an individual coaching basis can be arranged by appointment.</p>
+          </div>
+        </div>
+
+        <!-- Right: Image grid -->
+        <div class="lg:col-span-7 grid grid-cols-12 grid-rows-2 gap-3 reveal-scale" style="height: 540px;">
+          <div class="col-span-7 row-span-2 relative overflow-hidden rounded reveal reveal-d1">
+            <img src="brand_assets/images/jump-1.jpg" alt="Ski jump at Gosfield Lake" class="img-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-dark/60 to-transparent"></div>
+          </div>
+          <div class="col-span-5 row-span-1 relative overflow-hidden rounded reveal reveal-d2">
+            <img src="brand_assets/images/slalom-1.jpg" alt="Slalom skiing at Gosfield Lake" class="img-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent"></div>
+          </div>
+          <div class="col-span-5 row-span-1 relative overflow-hidden rounded reveal reveal-d3">
+            <img src="brand_assets/images/dock-chill.jpg" alt="Relaxing on the dock at Gosfield Lake" class="img-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-dark/50 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== BOATS — White bg with navy accents ======== -->
+  <section class="relative py-28 lg:py-36 bg-white overflow-hidden">
+    <!-- Subtle diagonal navy wash -->
+    <div class="absolute top-0 left-0 w-full h-full" style="background: linear-gradient(160deg, transparent 50%, rgba(27,45,79,0.02) 100%); pointer-events: none;"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Image side (left on desktop) -->
+        <div class="relative reveal-scale">
+          <div class="grid grid-cols-12 grid-rows-2 gap-3" style="height: 520px;">
+            <!-- Large card — Boats (spans left, full height) -->
+            <div class="col-span-7 row-span-2 relative overflow-hidden rounded group">
+              <img src="brand_assets/images/boat-2.jpg" alt="Tournament specification Ski Nautique boat" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent"></div>
+              <span class="absolute bottom-4 left-4 font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.2em] text-white/60">Boats</span>
+            </div>
+            <!-- Top-right card — Skis -->
+            <div class="col-span-5 row-span-1 relative overflow-hidden rounded group">
+              <img src="brand_assets/images/equipment-1.jpg" alt="Goodman tournament skis" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/50 to-transparent"></div>
+              <span class="absolute bottom-4 left-4 font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.2em] text-white/60">Skis</span>
+            </div>
+            <!-- Bottom-right card — Equipment -->
+            <div class="col-span-5 row-span-1 relative overflow-hidden rounded group">
+              <img src="brand_assets/images/equipment-2.jpg" alt="Skis and equipment by the lake" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/50 to-transparent"></div>
+              <span class="absolute bottom-4 left-4 font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.2em] text-white/60">Equipment</span>
+            </div>
+          </div>
+          <!-- Accent badge -->
+          <div class="absolute -bottom-5 -right-3 lg:-right-6 bg-accent px-7 py-5 rounded z-10 float-badge" style="box-shadow: 0 12px 36px rgba(232,135,30,0.3);">
+            <span class="font-condensed font-bold text-[0.7rem] uppercase tracking-[0.15em] text-white leading-snug">Top-Level<br>Equipment</span>
+          </div>
+        </div>
+
+        <!-- Text side (right on desktop) -->
+        <div class="reveal-right">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-4 block">Our Fleet</span>
+          <h2 class="section-title text-navy mb-6">TOURNAMENT<br><span class="text-accent">SPEC EQUIPMENT</span></h2>
+          <div class="hr-accent-anim mb-8"></div>
+          <p class="font-body text-navy/50 text-base mb-5" style="line-height: 1.75;">
+            We run a Ski Nautique 200 alongside our Ski Nautique Carbon, we've been partnered with Ski Nautique for 33 years, these are the most commonly used tournament boats in international competitions, allowing our tournament skiers to train replicating tournament conditions including SurePath.
+          </p>
+          <p class="font-body text-navy/50 text-base mb-10" style="line-height: 1.75;">
+            Great skiing starts with great kit, and we make sure every visitor has access to it. Our equipment store is stocked with top-of-the-range skis to suit every level and discipline — slalom, trick, combo and beginner — alongside premium wetsuits in a full range of sizes to keep you comfortable on the water whatever the weather.
+          </p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3">
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-navy/55 text-[0.8rem] uppercase tracking-wider">Ski Nautique 200</span></div>
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-navy/55 text-[0.8rem] uppercase tracking-wider">Ski Nautique Carbon</span></div>
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-navy/55 text-[0.8rem] uppercase tracking-wider">Full Slalom Course</span></div>
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-navy/55 text-[0.8rem] uppercase tracking-wider">Jump Facility</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== OPEN WATER SWIMMING — Full-width immersive dark section ======== -->
+  <section id="activities" class="relative overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img src="brand_assets/images/open-water-swimming.jpg" alt="Open water swimming at Gosfield Lake" class="img-cover">
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.75) 50%, rgba(10,22,40,0.5) 100%);"></div>
+      <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(10,22,40,0.6) 0%, transparent 40%);"></div>
+    </div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-12 py-28 lg:py-36">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+        <!-- Left: Copy -->
+        <div class="reveal-left">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Also at the Lake</span>
+          <h2 class="section-title text-white leading-none">
+            OPEN WATER<br><span class="text-accent">SWIMMING</span>
+          </h2>
+          <div class="hr-accent-anim mt-8 mb-8"></div>
+          <div class="space-y-5">
+            <p class="font-body text-white/60 text-[0.88rem]" style="line-height: 1.75;">Gosfield Lake is the perfect environment for triathletes and open water swimmers to train. The sheltered 36-acre lake provides calm, consistent conditions ideal for building confidence and improving technique.</p>
+            <p class="font-body text-white/60 text-[0.88rem]" style="line-height: 1.75;">Whether you're preparing for your first open water event or fine-tuning race pace, the lake offers a safe, scenic setting with easy access and plenty of space to swim.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 mt-10">
+            <a href="#contact" class="btn-primary">Get in Touch</a>
+          </div>
+        </div>
+
+        <!-- Right: Image -->
+        <div class="relative reveal-scale rounded overflow-hidden group" style="height: 500px;">
+          <img src="brand_assets/images/open-water-swimming.jpg" alt="Open water swimming at Gosfield Lake" class="img-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/30 to-transparent"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== MEMBERS CLUB — Feature block ======== -->
+  <section class="relative py-28 lg:py-36 overflow-hidden" style="background: linear-gradient(180deg, #f8f6f2 0%, #f0ece4 100%);">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch rounded overflow-hidden reveal-scale" style="box-shadow: 0 25px 80px rgba(27,45,79,0.10), 0 4px 20px rgba(27,45,79,0.06);">
+        <!-- Image side -->
+        <div class="relative overflow-hidden" style="min-height: 380px;">
+          <img src="brand_assets/images/members-club-2.jpg" alt="Members enjoying the lake at Gosfield" class="img-cover transition-transform duration-700 hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent"></div>
+        </div>
+        <!-- Content side -->
+        <div class="bg-navy-dark p-10 lg:p-14 flex flex-col justify-center">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Exclusive Access</span>
+          <h2 class="font-display text-[2.2rem] lg:text-[2.8rem] text-white leading-none tracking-tight mb-2">MEMBERS<br>CLUB</h2>
+          <div class="hr-accent mt-5 mb-6"></div>
+          <p class="font-body text-white/55 text-[0.88rem] mb-8" style="line-height: 1.75;">Join an exclusive community of water-sports enthusiasts. Membership gives you priority booking, preferential rates, and access to members-only sessions on the lake.</p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3 mb-10">
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-white/50 text-[0.8rem] uppercase tracking-wider">Priority Lake Access</span></div>
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-white/50 text-[0.8rem] uppercase tracking-wider">Exclusive Bookings</span></div>
+            <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-accent rounded-full"></div><span class="font-condensed font-medium text-white/50 text-[0.8rem] uppercase tracking-wider">Discounted Rates</span></div>
+          </div>
+          <a href="#contact" class="btn-primary self-start">Enquire About Membership</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== COACHES — Navy bg section (one of few dark sections) ======== -->
+  <section id="coaches" class="relative py-28 lg:py-36 bg-navy-dark overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full" style="background: linear-gradient(to left, rgba(232,135,30,0.04), transparent);"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
+        <div class="reveal">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Meet The Team</span>
+          <h2 class="section-title text-white">THE<br>COACHES</h2>
+        </div>
+        <p class="font-body text-white/40 text-base max-w-md mt-6 lg:mt-0 reveal reveal-d1" style="line-height: 1.75;">
+          Gosfield water ski club offers top class coaching to all standards of skier, beginners through to pro. Each members tow is coached on a 1:2:1 format.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="coach-card group relative overflow-hidden rounded reveal reveal-d1 card-lift" style="height: 540px;">
+          <img src="brand_assets/images/vince.jpg" alt="Vince Turp" class="img-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+            <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.25em] text-accent mb-2 block">Head Coach & Founder</span>
+            <h3 class="font-display text-[2.5rem] text-white leading-none mb-3">VINCE TURP</h3>
+            <div class="coach-bio">
+              <p class="font-body text-white/60 text-[0.8rem]" style="line-height: 1.65;">Vince has been skiing for 46 years and has run Gosfield Ski since 1992. A former GB team skier, he's still competing today, with a personal best of 2@10.25m. As a Senior Coach, International Driver, Judge, and Homologator, he also serves as Team Captain for the Junior GB Teams</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-card group relative overflow-hidden rounded reveal reveal-d2 card-lift" style="height: 540px;">
+          <img src="brand_assets/images/seb.jpg" alt="Seb Turp" class="img-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+            <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.25em] text-accent mb-2 block">Coach & Driver</span>
+            <h3 class="font-display text-[2.5rem] text-white leading-none mb-3">SEB TURP</h3>
+            <div class="coach-bio">
+              <p class="font-body text-white/60 text-[0.8rem]" style="line-height: 1.65;">Seb has been skiing since he could walk! A multiple National Champion, he has represented Great Britain at four European Championships and the Junior Worlds in Calgary. Having grown up on the water, he joined the Gosfield Ski crew last year as both a driver and coach.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-card group relative overflow-hidden rounded reveal reveal-d3 card-lift" style="height: 540px;">
+          <img src="brand_assets/images/ben.jpg" alt="Ben Turp" class="img-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-10">
+            <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.25em] text-accent mb-2 block">Coach & GB Squad</span>
+            <h3 class="font-display text-[2.5rem] text-white leading-none mb-3">BEN TURP</h3>
+            <div class="coach-bio">
+              <p class="font-body text-white/60 text-[0.8rem]" style="line-height: 1.65;">Earning 21 individual National Titles, twice becoming European Vice Champion, and securing multiple Top 20 finishes at the World Championships Ben has a wealth of achievements to his name! Ben has served as Head Coach for over 20 Development Days and British Squad Training programs, and continues to coach at Gosfield!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== UPCOMING EVENTS — White bg ======== -->
+  <section id="events" class="relative overflow-hidden">
+    <!-- Ski Competitions — white bg -->
+    <div class="py-28 lg:py-36 bg-white">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-3">
+              <svg class="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent">Ski Competitions</span>
+            </div>
+            <h2 class="section-title text-navy">UPCOMING<br><span class="text-accent">EVENTS</span></h2>
+          </div>
+          <p class="font-body text-navy/45 text-base max-w-md mt-6 lg:mt-0 reveal reveal-d1" style="line-height: 1.75;">
+            From tournament-level water ski competitions to moonlit open water swims — there's something for everyone at Gosfield Lake.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Gosfield Niner -->
+          <a href="events/gosfield-niner.html" class="bg-white rounded overflow-hidden reveal reveal-d1 card-lift group card-shadow card-shadow-hover border border-navy-100/40 block">
+            <div class="relative h-52 overflow-hidden">
+              <img src="brand_assets/images/event-1.jpg" alt="Gosfield Niner" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 font-condensed font-bold text-[0.6rem] uppercase tracking-[0.15em] rounded-sm">Tournament</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="event-date text-accent">6–7</span>
+                <div>
+                  <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.15em] text-navy/35 block">June 2026</span>
+                  <span class="font-condensed font-semibold text-[0.8rem] text-navy">6th & 7th June</span>
+                </div>
+              </div>
+              <h3 class="font-display text-[1.6rem] text-navy mb-2 leading-none">GOSFIELD NINER</h3>
+              <p class="font-body text-navy/45 text-[0.82rem]" style="line-height: 1.65;">Watch top athletes and rising stars compete across all three disciplines — Slalom, Trick, and Jump — as the British Youth Trials bring the future of the sport to the water.</p>
+            </div>
+          </a>
+
+          <!-- British National Waterski Championships -->
+          <a href="events/waterski-championship.html" class="bg-white rounded overflow-hidden reveal reveal-d2 card-lift group card-shadow card-shadow-hover border border-navy-100/40 block">
+            <div class="relative h-52 overflow-hidden">
+              <img src="brand_assets/images/event-2.jpg" alt="British National Waterski Championships" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-navy text-white px-3 py-1 font-condensed font-bold text-[0.6rem] uppercase tracking-[0.15em] rounded-sm">Championship</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="event-date text-navy">17–19</span>
+                <div>
+                  <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.15em] text-navy/35 block">July 2026</span>
+                  <span class="font-condensed font-semibold text-[0.8rem] text-navy">17th — 19th July</span>
+                </div>
+              </div>
+              <h3 class="font-display text-[1.6rem] text-navy mb-2 leading-none">BRITISH NATIONAL WATERSKI CHAMPIONSHIPS</h3>
+              <p class="font-body text-navy/45 text-[0.82rem]" style="line-height: 1.65;">From rising young talent to experienced competitors, the British Youth & Open Championships promise top-level action and incredible performances on the water.</p>
+            </div>
+          </a>
+
+          <!-- Turps Trophy -->
+          <a href="events/turps-trophy.html" class="bg-white rounded overflow-hidden reveal reveal-d3 card-lift group card-shadow card-shadow-hover border border-navy-100/40 block">
+            <div class="relative h-52 overflow-hidden">
+              <img src="brand_assets/images/event-3.jpg" alt="Turps Trophy" class="img-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/60 to-transparent"></div>
+              <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 font-condensed font-bold text-[0.6rem] uppercase tracking-[0.15em] rounded-sm">Tournament</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-4 mb-4">
+                <span class="event-date text-accent">5–6</span>
+                <div>
+                  <span class="font-condensed font-semibold text-[0.6rem] uppercase tracking-[0.15em] text-navy/35 block">September 2026</span>
+                  <span class="font-condensed font-semibold text-[0.8rem] text-navy">5th & 6th September</span>
+                </div>
+              </div>
+              <h3 class="font-display text-[1.6rem] text-navy mb-2 leading-none">TURPS TROPHY</h3>
+              <p class="font-body text-navy/45 text-[0.82rem]" style="line-height: 1.65;">Join us for the final competition of the season as skiers take to the water one last time to compete in Slalom, Trick, and Jump.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Open Water Swimming — dark navy bg -->
+    <div class="py-20 lg:py-28 relative" style="background: linear-gradient(175deg, #0F1A2E 0%, #1B2D4F 50%, #0F1A2E 100%);">
+      <!-- Subtle water texture overlay -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 20%22><path d=%22M0 10 Q25 0 50 10 T100 10%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.5%22/></svg>'); background-size: 200px 40px; background-repeat: repeat;"></div>
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-14">
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-3">
+              <svg class="w-5 h-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+              <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-cyan-400">Open Water Swimming</span>
+            </div>
+            <h2 class="section-title text-white">SWIMMING<br><span style="color: #22d3ee;">EVENTS</span></h2>
+          </div>
+          <p class="font-body text-white/40 text-base max-w-md mt-6 lg:mt-0 reveal reveal-d1" style="line-height: 1.75;">
+            Take to the open water at Gosfield Lake. With a beautiful natural setting and a calendar of swims running through the season, it's the perfect place to experience open water swimming at its finest.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <!-- Flower Moon -->
+          <a href="events/flower-moon.html" class="reveal reveal-d1 rounded-lg overflow-hidden group relative flex flex-col cursor-pointer hover:border-cyan-400/40 transition-colors" style="background: linear-gradient(160deg, rgba(34,211,238,0.08) 0%, rgba(15,26,46,0.95) 100%); border: 1px solid rgba(34,211,238,0.12); text-decoration: none;">
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-condensed font-bold text-[0.55rem] uppercase tracking-[0.18em] text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-sm">Swimming</span>
+                <span class="font-display text-[2rem] text-cyan-400 leading-none">1</span>
+              </div>
+              <h3 class="font-display text-[1.15rem] text-white mb-1 leading-tight">FLOWER MOON</h3>
+              <span class="font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.12em] text-white/30 block mb-3">May 1st</span>
+              <div class="w-full h-40 rounded overflow-hidden mb-3"><img src="brand_assets/images/flower-moon.jpg" alt="Flower Moon swim" class="w-full h-full object-cover object-top"></div>
+              <p class="font-body text-white/35 text-[0.75rem] flex-1" style="line-height: 1.6;">Kick off the season celebrating the beauty of the Flower Moon.</p>
+              <div class="mt-4 pt-3 border-t border-white/5">
+                <span class="font-condensed text-[0.6rem] text-cyan-400/70 uppercase tracking-wider">£10 swim · £5 yoga</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Summer Solstice -->
+          <a href="events/summer-solstice.html" class="reveal reveal-d2 rounded-lg overflow-hidden group relative flex flex-col cursor-pointer hover:border-cyan-400/40 transition-colors" style="background: linear-gradient(160deg, rgba(34,211,238,0.08) 0%, rgba(15,26,46,0.95) 100%); border: 1px solid rgba(34,211,238,0.12); text-decoration: none;">
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-condensed font-bold text-[0.55rem] uppercase tracking-[0.18em] text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-sm">Swimming</span>
+                <span class="font-display text-[2rem] text-cyan-400 leading-none">21</span>
+              </div>
+              <h3 class="font-display text-[1.15rem] text-white mb-1 leading-tight">SUMMER SOLSTICE</h3>
+              <span class="font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.12em] text-white/30 block mb-3">June 21st</span>
+              <div class="w-full h-40 rounded overflow-hidden mb-3"><img src="brand_assets/images/solstice-swim.jpg" alt="Summer Solstice swim" class="w-full h-full object-cover object-top"></div>
+              <p class="font-body text-white/35 text-[0.75rem] flex-1" style="line-height: 1.6;">Celebrate the longest day with a special open water swim at sunset.</p>
+              <div class="mt-4 pt-3 border-t border-white/5">
+                <span class="font-condensed text-[0.6rem] text-cyan-400/70 uppercase tracking-wider">£10 swim · £5 yoga · Sauna</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Buck Moon -->
+          <a href="events/buck-moon.html" class="reveal reveal-d3 rounded-lg overflow-hidden group relative flex flex-col cursor-pointer hover:border-cyan-400/40 transition-colors" style="background: linear-gradient(160deg, rgba(34,211,238,0.08) 0%, rgba(15,26,46,0.95) 100%); border: 1px solid rgba(34,211,238,0.12); text-decoration: none;">
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-condensed font-bold text-[0.55rem] uppercase tracking-[0.18em] text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-sm">Swimming</span>
+                <span class="font-display text-[2rem] text-cyan-400 leading-none">29</span>
+              </div>
+              <h3 class="font-display text-[1.15rem] text-white mb-1 leading-tight">BUCK MOON</h3>
+              <span class="font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.12em] text-white/30 block mb-3">July 29th</span>
+              <div class="w-full h-40 rounded overflow-hidden mb-3"><img src="brand_assets/images/buck-moon.jpg" alt="Buck Moon swim" class="w-full h-full object-cover object-top"></div>
+              <p class="font-body text-white/35 text-[0.75rem] flex-1" style="line-height: 1.6;">Experience the magic of the Buck Moon with a unique evening swim under the summer sky.</p>
+              <div class="mt-4 pt-3 border-t border-white/5">
+                <span class="font-condensed text-[0.6rem] text-cyan-400/70 uppercase tracking-wider">£10 swim · £5 yoga · Sauna</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Harvest Moon -->
+          <a href="events/harvest-moon.html" class="reveal reveal-d1 rounded-lg overflow-hidden group relative flex flex-col cursor-pointer hover:border-cyan-400/40 transition-colors" style="background: linear-gradient(160deg, rgba(34,211,238,0.08) 0%, rgba(15,26,46,0.95) 100%); border: 1px solid rgba(34,211,238,0.12); text-decoration: none;">
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-condensed font-bold text-[0.55rem] uppercase tracking-[0.18em] text-cyan-400 bg-cyan-400/10 px-2.5 py-1 rounded-sm">Swimming</span>
+                <span class="font-display text-[2rem] text-cyan-400 leading-none">26</span>
+              </div>
+              <h3 class="font-display text-[1.15rem] text-white mb-1 leading-tight">HARVEST MOON</h3>
+              <span class="font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.12em] text-white/30 block mb-3">September 26th</span>
+              <div class="w-full h-40 rounded overflow-hidden mb-3"><img src="brand_assets/images/harvest-moon.jpg" alt="Harvest Moon swim" class="w-full h-full object-cover object-top"></div>
+              <p class="font-body text-white/35 text-[0.75rem] flex-1" style="line-height: 1.6;">Slip into the calm waters beneath the rising moon and experience the quiet beauty of an autumn moonlit swim.</p>
+              <div class="mt-4 pt-3 border-t border-white/5">
+                <span class="font-condensed text-[0.6rem] text-cyan-400/70 uppercase tracking-wider">£10 swim · £5 yoga · Sauna</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Hunter's Moon — Season Finale -->
+          <a href="events/hunters-moon.html" class="reveal reveal-d2 rounded-lg overflow-hidden group relative flex flex-col cursor-pointer hover:border-accent/40 transition-colors" style="background: linear-gradient(160deg, rgba(232,135,30,0.1) 0%, rgba(15,26,46,0.95) 100%); border: 1px solid rgba(232,135,30,0.2); text-decoration: none;">
+            <div class="absolute top-0 right-0 bg-accent text-white font-condensed font-bold text-[0.5rem] uppercase tracking-[0.15em] px-2 py-0.5 rounded-bl-md">Season Finale</div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="font-condensed font-bold text-[0.55rem] uppercase tracking-[0.18em] text-accent bg-accent/10 px-2.5 py-1 rounded-sm">Swimming</span>
+                <span class="font-display text-[2rem] text-accent leading-none">26</span>
+              </div>
+              <h3 class="font-display text-[1.15rem] text-white mb-1 leading-tight">HUNTER'S MOON</h3>
+              <span class="font-condensed font-semibold text-[0.65rem] uppercase tracking-[0.12em] text-white/30 block mb-3">October 26th</span>
+              <div class="w-full h-40 rounded overflow-hidden mb-3"><img src="brand_assets/images/hunters-moon.jpg" alt="Hunter's Moon swim" class="w-full h-full object-cover object-top"></div>
+              <p class="font-body text-white/35 text-[0.75rem] flex-1" style="line-height: 1.6;">The final swim of the season. Swim under the glow of the full moon and the soothing heat of the sauna.</p>
+              <div class="mt-4 pt-3 border-t border-white/5">
+                <span class="font-condensed text-[0.6rem] text-accent/70 uppercase tracking-wider">£10 swim · £5 yoga · Sauna</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a href="events.html" class="inline-flex items-center gap-2 font-condensed font-bold text-[0.8rem] uppercase tracking-[0.18em] text-white border-2 border-white/20 px-8 py-3.5 rounded hover:bg-white hover:text-navy-deep transition-all duration-300">View All Events</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FACILITIES — Off-white bg ======== -->
+  <section id="facilities" class="relative py-28 lg:py-36 overflow-hidden" style="background: #F8F9FB;">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Everything You Need</span>
+          <h2 class="section-title text-navy mb-10">OUR<br><span class="text-accent">FACILITIES</span></h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">International Slalom</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Full competition spec</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">Jump Facility</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Tournament-grade ramp</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">Changing & Showers</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Quality amenities</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">The Snack Shack</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">On-site lakeside cafe</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">Appletree Restaurant</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Open Wed–Sat evenings</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">Kids Play Area</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Family friendly grounds</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">Lakeside Picnic</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Scenic relaxation areas</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-4 bg-white rounded border border-navy-100/40 hover:border-accent/30 transition-colors card-shadow">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full mt-2 shrink-0"></div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.78rem] text-navy uppercase tracking-wider">On-Site Parking</span>
+                <p class="text-navy/35 text-[0.7rem] mt-0.5">Car park available</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative reveal reveal-d2">
+          <div class="relative overflow-hidden rounded" style="height: 620px;">
+            <img src="brand_assets/images/lake1.jpg" alt="Gosfield Lake facilities" class="img-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent"></div>
+          </div>
+          <div class="absolute -top-5 -left-5 bg-navy w-[110px] h-[110px] rounded-full flex flex-col items-center justify-center z-10" style="box-shadow: 0 10px 36px rgba(27,45,79,0.35);">
+            <span class="font-display text-[2.2rem] text-white leading-none counter-value" data-target="36">0</span>
+            <span class="font-condensed font-semibold text-[0.5rem] uppercase tracking-[0.15em] text-white/70">Acre Lake</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== SKI & STAY — Navy bg section ======== -->
+  <section id="stay" class="relative py-28 lg:py-36 overflow-hidden bg-navy-dark">
+    <div class="absolute inset-0">
+      <img src="https://placehold.co/1920x900/0A1628/0F1A2E?text=." alt="Lakeside accommodation" class="img-cover" style="opacity: 0.3;">
+    </div>
+    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(10,22,40,0.95), rgba(15,26,46,0.7));"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="reveal">
+          <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Accommodation</span>
+          <h2 class="section-title text-white mb-6">SKI &<br><span class="text-accent">STAY</span></h2>
+          <div class="hr-accent mb-8"></div>
+          <p class="font-body text-white/50 text-[0.88rem] max-w-lg" style="line-height: 1.75;">
+            For 30 years Gosfield Lake has been one of the UK's leading water ski facilities and a regular host of National Tournaments — and with our Ski & Stay package, you can experience it without ever leaving the site. Choose from two beautifully appointed, hotel-style rooms, each with a plush queen-size double, a pull-out sofa and a modern ensuite. Our kit room has everything you'll need, from wetsuits and lifejackets to slalom, trick, jump, combo and kids' skis, boards, inflatables, ropes and handles — all paired with our top-of-the-line 2021 Ski Nautique. And when it's time to refuel, our welcoming on-site café has you covered, whether that's a fresh morning coffee, a light snack between sessions, or a hearty meal after a day on the water.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-5 reveal reveal-d1 justify-between">
+          <div class="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded overflow-hidden hover:border-accent/30 transition-colors card-lift">
+            <div class="flex items-stretch" style="height: 165px;">
+              <div class="w-44 md:w-60 shrink-0 relative overflow-hidden">
+                <img src="brand_assets/images/cabin.jpg" alt="Luxury guest rooms" class="img-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-deep/30"></div>
+              </div>
+              <div class="p-6 flex flex-col justify-center">
+                <h3 class="font-display text-[1.25rem] text-white mb-1">LUXURY GUEST ROOMS</h3>
+                <p class="font-body text-white/40 text-[0.82rem]" style="line-height: 1.65;">2 en-suite bedrooms with lake views & private patios. 1 Double with Jacuzzi bathroom, 1 Twin with shower. Available nightly.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded overflow-hidden hover:border-accent/30 transition-colors card-lift">
+            <div class="flex items-stretch" style="height: 165px;">
+              <div class="w-44 md:w-60 shrink-0 relative overflow-hidden">
+                <img src="brand_assets/images/annexe.jpg" alt="The Annexe" class="img-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-deep/30"></div>
+              </div>
+              <div class="p-6 flex flex-col justify-center">
+                <h3 class="font-display text-[1.25rem] text-white mb-1">THE ANNEXE</h3>
+                <p class="font-body text-white/40 text-[0.82rem]" style="line-height: 1.65;">Available nightly. Perfect for groups and families looking for a lakeside retreat right next to the action.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded overflow-hidden hover:border-accent/30 transition-colors card-lift">
+            <div class="flex items-stretch" style="height: 165px;">
+              <div class="w-44 md:w-60 shrink-0 relative overflow-hidden">
+                <img src="brand_assets/images/food.jpg" alt="Camping at Gosfield Lake" class="img-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent to-navy-deep/30"></div>
+              </div>
+              <div class="p-6 flex flex-col justify-center">
+                <h3 class="font-display text-[1.25rem] text-white mb-1">CAMPING</h3>
+                <p class="font-body text-white/40 text-[0.82rem]" style="line-height: 1.65;">Open Apr–Sep for tents. Caravans & motorhomes year-round. Electric hook-up, shower block, laundry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== MEMBERSHIP CTA — Orange band ======== -->
+  <section class="relative py-24 lg:py-28 bg-accent overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.06]">
+      <svg width="100%" height="100%"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#grid)"/></svg>
+    </div>
+    <div class="absolute top-0 right-0 w-1/2 h-full" style="background: linear-gradient(to left, rgba(255,255,255,0.07), transparent);"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 reveal">
+          <h2 class="section-title text-white mb-5">JOIN THE GOSFIELD<br>MEMBERS CLUB</h2>
+          <p class="font-body text-white/80 text-[1.05rem] max-w-xl" style="line-height: 1.75;">
+            Members get priority access to the lake, exclusive booking windows, and discounted rates. The club is open to the public Wed–Sat, but members ski any day of the season.
+          </p>
+        </div>
+        <div class="lg:col-span-5 flex flex-col sm:flex-row items-start gap-4 reveal reveal-d1">
+          <a href="mailto:skiing@gosfieldlake.co.uk" class="inline-block bg-white text-navy font-condensed font-bold text-[0.85rem] uppercase tracking-[0.1em] px-8 py-4 rounded cursor-pointer transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-3 active:translate-y-0" style="box-shadow: 0 4px 20px rgba(0,0,0,0.12);">Enquire About Membership</a>
+          <a href="http://skitow.rileyco.co.uk/" target="_blank" class="inline-block border-2 border-white text-white font-condensed font-bold text-[0.85rem] uppercase tracking-[0.1em] px-8 py-4 rounded cursor-pointer transition-all duration-300 hover:bg-white hover:text-navy hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-3 active:translate-y-0">Book a Guest Set</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CONTACT — White bg ======== -->
+  <section id="contact" class="relative py-28 lg:py-36 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="reveal">
+        <span class="font-condensed font-semibold text-[0.75rem] uppercase tracking-[0.2em] text-accent mb-3 block">Get In Touch</span>
+        <h2 class="section-title text-navy mb-12">FIND US</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+        <!-- Contact details — two sub-columns -->
+        <div class="lg:col-span-5 reveal">
+          <div class="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-6">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-navy-50 rounded flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1B2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.03 7.03 1 12 1C16.97 1 21 5.03 21 10Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.72rem] text-navy uppercase tracking-wider">Address</span>
+                <p class="font-body text-navy/45 text-[0.78rem] mt-0.5" style="line-height: 1.6;">Gosfield Lake Resort,<br>Church Rd, Gosfield,<br>Halstead CO9 1UD</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-navy-50 rounded flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1B2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+              </div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.72rem] text-navy uppercase tracking-wider">Season Hours</span>
+                <p class="font-body text-navy/45 text-[0.78rem] mt-0.5" style="line-height: 1.6;">Easter — September<br>Wed–Sat, 9:30 AM — 5:30 PM</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-navy-50 rounded flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1B2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V19.92C22 20.47 21.53 20.92 20.98 20.98C10.04 22.04 2 14 3.02 3.02C3.08 2.47 3.53 2 4.08 2H7.08L9.08 8L7 10C8.5 13.5 10.5 15.5 14 17L16 14.92L22 16.92Z"/></svg>
+              </div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.72rem] text-navy uppercase tracking-wider">Phone</span>
+                <p class="font-body text-navy/45 text-[0.78rem] mt-0.5"><a href="tel:01787475043" class="hover:text-accent transition-colors">01787 475043</a></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 bg-navy-50 rounded flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1B2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13L2 4"/></svg>
+              </div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.72rem] text-navy uppercase tracking-wider">Email</span>
+                <p class="font-body text-navy/45 text-[0.78rem] mt-0.5" style="line-height: 1.6;">
+                  <a href="mailto:skiing@gosfieldlake.co.uk" class="hover:text-accent transition-colors">skiing@gosfieldlake.co.uk</a><br>
+                  <a href="mailto:events@gosfieldlake.co.uk" class="hover:text-accent transition-colors">events@gosfieldlake.co.uk</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 col-span-2">
+              <div class="w-8 h-8 bg-navy-50 rounded flex items-center justify-center shrink-0 mt-0.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1B2D4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12H22"/><path d="M12 2C14.5 4.5 16 8 16 12C16 16 14.5 19.5 12 22C9.5 19.5 8 16 8 12C8 8 9.5 4.5 12 2Z"/></svg>
+              </div>
+              <div>
+                <span class="font-condensed font-semibold text-[0.72rem] text-navy uppercase tracking-wider">Directions</span>
+                <p class="font-body text-navy/45 text-[0.78rem] mt-0.5">M11 J8 (Stansted), A120 to Braintree, A131 towards Halstead. Left at High Garrett into Gosfield.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps -->
+        <div class="lg:col-span-7 reveal reveal-d1">
+          <div class="relative overflow-hidden rounded h-full" style="min-height: 320px; box-shadow: 0 4px 24px rgba(27,45,79,0.08);">
+            <iframe
+              src="https://maps.google.com/maps?q=Gosfield+Lake+Resort,+Church+Rd,+Gosfield,+Halstead+CO9+1UD&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0; position: absolute; inset: 0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== FOOTER — Navy deep ======== -->
+  <footer class="bg-navy-deep border-t border-white/[0.04] py-14">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-14">
+        <div>
+          <a href="index.html" class="block mb-5" style="width: 130px; height: 60px;">
+            <img src="brand_assets/images/logo-white.png" alt="Gosfield Water Ski Club" class="w-full h-full object-contain">
+          </a>
+          <p class="font-body text-white/25 text-[0.8rem]" style="line-height: 1.65;">Gosfield Lake Resort, Church Rd, Gosfield, Halstead CO9 1UD</p>
+        </div>
+
+        <div>
+          <h4 class="font-condensed font-bold text-[0.7rem] uppercase tracking-[0.15em] text-white/70 mb-5">Quick Links</h4>
+          <div class="flex flex-col gap-2.5">
+            <a href="#about" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">About the Club</a>
+            <a href="#activities" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Swimming</a>
+            <a href="#coaches" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Our Coaches</a>
+            <a href="events.html" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Events</a>
+            <a href="#stay" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Ski & Stay</a>
+            <a href="http://skitow.rileyco.co.uk/" target="_blank" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Book Online</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-condensed font-bold text-[0.7rem] uppercase tracking-[0.15em] text-white/70 mb-5">Events</h4>
+          <div class="flex flex-col gap-2.5">
+            <a href="events/gosfield-niner.html" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Gosfield Niner</a>
+            <a href="events/waterski-championship.html" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">British National Championships</a>
+            <a href="events/turps-trophy.html" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">Turps Trophy</a>
+            <a href="events.html" class="font-body text-white/25 text-[0.8rem] hover:text-accent transition-colors">View All Events</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-condensed font-bold text-[0.7rem] uppercase tracking-[0.15em] text-white/70 mb-5">Follow Us</h4>
+          <div class="flex gap-3 mb-6">
+            <a href="https://www.instagram.com/gosfieldski/" target="_blank" class="w-10 h-10 bg-white/[0.05] rounded flex items-center justify-center hover:bg-accent transition-colors group focus-visible:outline-2 focus-visible:outline-accent" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/40 group-hover:text-white transition-colors"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            </a>
+            <a href="https://www.facebook.com/gosfieldlake" target="_blank" class="w-10 h-10 bg-white/[0.05] rounded flex items-center justify-center hover:bg-accent transition-colors group focus-visible:outline-2 focus-visible:outline-accent" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/40 group-hover:text-white transition-colors"><path d="M18 2H15C13.67 2 12.4 2.53 11.46 3.46C10.53 4.4 10 5.67 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73 14.11 6.48 14.29 6.29C14.48 6.11 14.73 6 15 6H18V2Z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/watch?v=P8wlncTGlA4" target="_blank" class="w-10 h-10 bg-white/[0.05] rounded flex items-center justify-center hover:bg-accent transition-colors group focus-visible:outline-2 focus-visible:outline-accent" aria-label="YouTube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-white/40 group-hover:text-white transition-colors"><path d="M22.54 6.42C22.42 5.95 22.18 5.51 21.84 5.16C21.5 4.81 21.07 4.55 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.93 4.59 2.5 4.85 2.16 5.2C1.82 5.55 1.58 5.99 1.46 6.46C1 8.18 1 12 1 12C1 12 1 15.82 1.46 17.54C1.69 18.49 2.44 19.24 3.4 19.54C5.12 20 12 20 12 20C12 20 18.88 20 20.6 19.54C21.56 19.24 22.31 18.49 22.54 17.54C23 15.82 23 12 23 12C23 12 23 8.18 22.54 6.42Z"/><path d="M9.75 15.02L15.5 12L9.75 8.98V15.02Z" fill="#0A1628"/></svg>
+            </a>
+          </div>
+          <a href="https://gosfieldlake.co.uk" target="_blank" class="font-condensed font-semibold text-[0.75rem] text-accent uppercase tracking-[0.1em] hover:text-accent-light transition-colors inline-flex items-center gap-2">
+            Visit Gosfield Lake Resort
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/[0.05] pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="font-body text-white/20 text-[0.7rem]">&copy; 2026 Gosfield Water Ski Club. All rights reserved.</p>
+        <p class="font-body text-white/12 text-[0.7rem]">Church Road, Gosfield, Halstead, Essex, CO9 1UD</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======== JS ======== -->
+  <script>
+    // Scroll reveal — unified observer for all reveal types
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-item, .hr-accent-anim').forEach(el => obs.observe(el));
+
+    // Hero video — cinematic slow-motion
+    const heroVideo = document.getElementById('heroVideo');
+    if (heroVideo) {
+      heroVideo.playbackRate = 0.8;
+      heroVideo.addEventListener('loadedmetadata', () => { heroVideo.playbackRate = 0.8; });
+    }
+
+    // Sticky nav
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      document.getElementById('bar1').style.transform = menuOpen ? 'rotate(45deg) translate(4px,4px)' : '';
+      document.getElementById('bar2').style.opacity = menuOpen ? '0' : '';
+      document.getElementById('bar3').style.transform = menuOpen ? 'rotate(-45deg) translate(4px,-4px)' : '';
+      document.getElementById('bar3').style.width = menuOpen ? '24px' : '';
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    });
+    function closeMobile() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      document.getElementById('bar1').style.transform = '';
+      document.getElementById('bar2').style.opacity = '';
+      document.getElementById('bar3').style.transform = '';
+      document.getElementById('bar3').style.width = '';
+      document.body.style.overflow = '';
+    }
+
+    // Parallax hero video
+    const heroVid = document.getElementById('heroVideo');
+    window.addEventListener('scroll', () => {
+      if (heroVid && window.scrollY < window.innerHeight) {
+        heroVid.style.transform = `translateY(${window.scrollY * 0.2}px) scale(1.15)`;
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Scroll progress bar
+    const scrollBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      scrollBar.style.transform = `scaleX(${window.scrollY / h})`;
+    }, { passive: true });
+
+    // Counter animation
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseInt(el.dataset.target);
+          let current = 0;
+          const step = Math.max(1, Math.floor(target / 40));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = current;
+          }, 35);
+          counterObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter-value').forEach(el => counterObs.observe(el));
+
+  </script>
+
+</body>
+</html>

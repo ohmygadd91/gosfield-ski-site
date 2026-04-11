@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+
+# Dev tooling
+serve.mjs
+screenshot.mjs
+package.json
+package-lock.json
+
+# Temporary files
+temporary screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Original/source images (not used by site — processed versions are the .jpg files)
+brand_assets/images/*.heic
+brand_assets/images/*.avif
+brand_assets/images/BMC.png
+brand_assets/images/BWS.png
+brand_assets/images/Ben.png
+brand_assets/images/Nautique.png
+brand_assets/images/Seb.png
+brand_assets/images/Vince.png
+brand_assets/images/Equipment.png
+brand_assets/images/Equipment 2.png
+brand_assets/images/Flower Moon.png
+brand_assets/images/Buck Moon.png
+brand_assets/images/Harvest moon.png
+brand_assets/images/Solstice swim.png
+brand_assets/images/Members Club 2.png
+brand_assets/images/Gosfield logo.png
+brand_assets/images/Hunters Moon.jpg
+brand_assets/images/Members Club.jpeg
+brand_assets/images/Jump 1.jpeg
+brand_assets/images/Slalom 1.jpeg
+brand_assets/images/event  1.jpg
+brand_assets/images/event 3.jpg
+brand_assets/images/event2.JPG
+brand_assets/images/_S2A9159.jpeg
+brand_assets/images/IMG_*
+brand_assets/images/0ee28384-*.jpeg
+brand_assets/images/1788B8D8-*.jpeg
+brand_assets/images/4AF946ED-*.jpeg
+brand_assets/images/5241ACC4-*.jpeg
+brand_assets/images/6755b43a-*.jpeg
+brand_assets/images/C9B70D7B-*.jpeg
+
+# Unused source video
+brand_assets/videos/SKI  VIDEO.mov
