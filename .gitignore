@@ -55,3 +55,6 @@ brand_assets/images/C9B70D7B-*.jpeg
 
 # Unused source video
 brand_assets/videos/SKI  VIDEO.mov
+
+# Local Netlify folder
+.netlify
